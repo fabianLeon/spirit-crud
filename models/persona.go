@@ -11,7 +11,7 @@ import (
 )
 
 type Persona struct {
-	Id              int       `orm:"column(id);pk"`
+	Id              int       `orm:"column(id);pk;auto"`
 	Documento       string    `orm:"column(documento);size(15);null"`
 	Correo          string    `orm:"column(correo);size(100);null"`
 	Nombres         string    `orm:"column(nombres);size(100);null"`
@@ -21,7 +21,6 @@ type Persona struct {
 	Telefono        string    `orm:"column(telefono);size(15);null"`
 	Barrio          string    `orm:"column(barrio);size(100);null"`
 	Activo          int8      `orm:"column(activo);null"`
-	RollId          *Roll     `orm:"column(roll_id);rel(fk)"`
 }
 
 func (t *Persona) TableName() string {
