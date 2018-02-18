@@ -3,7 +3,7 @@ package controllers
 import (
 	"encoding/json"
 	"errors"
-	"github.com/fabianLeon/spirit_api/models"
+	"github.com/fabianLeon/spirit-crud/models"
 	"strconv"
 	"strings"
 

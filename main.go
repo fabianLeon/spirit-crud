@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "github.com/fabianLeon/spirit_api/routers"
+	_ "github.com/fabianLeon/spirit-crud/routers"
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"

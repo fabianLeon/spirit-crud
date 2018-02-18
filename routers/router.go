@@ -8,7 +8,7 @@
 package routers
 
 import (
-	"github.com/fabianLeon/spirit_api/controllers"
+	"github.com/fabianLeon/spirit-crud/controllers"
 
 	"github.com/astaxie/beego"
 )

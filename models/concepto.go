@@ -6,7 +6,6 @@ import (
 	"reflect"
 	"strings"
 	"time"
-
 	"github.com/astaxie/beego/orm"
 )
 
@@ -14,8 +13,9 @@ type Concepto struct {
 	Id             int           `orm:"column(id);auto"`
 	Nombre         string        `orm:"column(nombre);size(45);null"`
 	Descripcion    string        `orm:"column(descripcion);size(45);null"`
-	Fecha          time.Time     `orm:"column(fecha);type(date);null"`
-	TipoConceptoId *TipoConcepto `orm:"column(tipo_concepto_id);rel(fk)"`
+	FechaInicio    time.Time     `orm:"column(fecha_inicio);type(date);null"`
+	FechaFin       time.Time     `orm:"column(fecha_fin);type(date);null"`
+	TipoConcepto   *TipoConcepto `orm:"column(tipo_concepto);rel(fk)"`
 }
 
 func (t *Concepto) TableName() string {

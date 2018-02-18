@@ -5,16 +5,17 @@ import (
 	"fmt"
 	"reflect"
 	"strings"
-
+	"time"
 	"github.com/astaxie/beego/orm"
 )
 
 type MovimientoFinanciero struct {
-	Id               int             `orm:"column(id);pk"`
+	Id               int             `orm:"column(id);pk;auto"`
 	ConceptoId       *Concepto       `orm:"column(concepto_id);rel(fk)"`
 	PersonaId        *Persona        `orm:"column(persona_id);rel(fk)"`
 	Valor            float64         `orm:"column(valor);null;digits(10);decimals(0)"`
 	TipoMovimientoId *TipoMovimiento `orm:"column(tipo_movimiento_id);rel(fk)"`
+	Fecha		      time.Time      `orm:"column(fecha);type(date);null"`
 }
 
 func (t *MovimientoFinanciero) TableName() string {
@@ -49,7 +50,7 @@ func GetMovimientoFinancieroById(id int) (v *MovimientoFinanciero, err error) {
 func GetAllMovimientoFinanciero(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
-	qs := o.QueryTable(new(MovimientoFinanciero))
+	qs := o.QueryTable(new(MovimientoFinanciero)).RelatedSel()
 	// query k=v
 	for k, v := range query {
 		// rewrite dot-notation to Object__Attribute
