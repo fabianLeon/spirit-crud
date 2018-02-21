@@ -16,6 +16,12 @@ import (
 func init() {
 	ns := beego.NewNamespace("/v1",
 
+		beego.NSNamespace("/persona_roll",
+			beego.NSInclude(
+				&controllers.PersonaRollController{},
+			),
+		),
+
 		beego.NSNamespace("/combates",
 			beego.NSInclude(
 				&controllers.CombatesController{},

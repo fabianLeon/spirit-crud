@@ -1,0 +1,2400 @@
+swagger: "2.0"
+info:
+  title: beego Test API
+  description: beego has a very cool tools to autogenerate documents for your API
+  version: 1.0.0
+  termsOfService: http://beego.me/
+  contact:
+    email: astaxie@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+basePath: /v1
+paths:
+  /combates/:
+    get:
+      tags:
+      - combates
+      description: get Combates
+      operationId: CombatesController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Combates'
+        "403":
+          description: ""
+    post:
+      tags:
+      - combates
+      description: create Combates
+      operationId: CombatesController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Combates content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Combates'
+      responses:
+        "201":
+          description: '{int} models.Combates'
+        "403":
+          description: body is empty
+  /combates/{id}:
+    get:
+      tags:
+      - combates
+      description: get Combates by id
+      operationId: CombatesController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Combates'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - combates
+      description: update the Combates
+      operationId: CombatesController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Combates content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Combates'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Combates'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - combates
+      description: delete the Combates
+      operationId: CombatesController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /concepto/:
+    get:
+      tags:
+      - concepto
+      description: get Concepto
+      operationId: ConceptoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Concepto'
+        "403":
+          description: ""
+    post:
+      tags:
+      - concepto
+      description: create Concepto
+      operationId: ConceptoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Concepto content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Concepto'
+      responses:
+        "201":
+          description: '{int} models.Concepto'
+        "403":
+          description: body is empty
+  /concepto/{id}:
+    get:
+      tags:
+      - concepto
+      description: get Concepto by id
+      operationId: ConceptoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Concepto'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - concepto
+      description: update the Concepto
+      operationId: ConceptoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Concepto content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Concepto'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Concepto'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - concepto
+      description: delete the Concepto
+      operationId: ConceptoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /evento/:
+    get:
+      tags:
+      - evento
+      description: get Evento
+      operationId: EventoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Evento'
+        "403":
+          description: ""
+    post:
+      tags:
+      - evento
+      description: create Evento
+      operationId: EventoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Evento content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Evento'
+      responses:
+        "201":
+          description: '{int} models.Evento'
+        "403":
+          description: body is empty
+  /evento/{id}:
+    get:
+      tags:
+      - evento
+      description: get Evento by id
+      operationId: EventoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Evento'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - evento
+      description: update the Evento
+      operationId: EventoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Evento content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Evento'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Evento'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - evento
+      description: delete the Evento
+      operationId: EventoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /foto/:
+    get:
+      tags:
+      - foto
+      description: get Foto
+      operationId: FotoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Foto'
+        "403":
+          description: ""
+    post:
+      tags:
+      - foto
+      description: create Foto
+      operationId: FotoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Foto content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Foto'
+      responses:
+        "201":
+          description: '{int} models.Foto'
+        "403":
+          description: body is empty
+  /foto/{id}:
+    get:
+      tags:
+      - foto
+      description: get Foto by id
+      operationId: FotoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Foto'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - foto
+      description: update the Foto
+      operationId: FotoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Foto content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Foto'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Foto'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - foto
+      description: delete the Foto
+      operationId: FotoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /lugar/:
+    get:
+      tags:
+      - lugar
+      description: get Lugar
+      operationId: LugarController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Lugar'
+        "403":
+          description: ""
+    post:
+      tags:
+      - lugar
+      description: create Lugar
+      operationId: LugarController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Lugar content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Lugar'
+      responses:
+        "201":
+          description: '{int} models.Lugar'
+        "403":
+          description: body is empty
+  /lugar/{id}:
+    get:
+      tags:
+      - lugar
+      description: get Lugar by id
+      operationId: LugarController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Lugar'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - lugar
+      description: update the Lugar
+      operationId: LugarController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Lugar content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Lugar'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Lugar'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - lugar
+      description: delete the Lugar
+      operationId: LugarController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /movimiento_financiero/:
+    get:
+      tags:
+      - movimiento_financiero
+      description: get MovimientoFinanciero
+      operationId: MovimientoFinancieroController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.MovimientoFinanciero'
+        "403":
+          description: ""
+    post:
+      tags:
+      - movimiento_financiero
+      description: create MovimientoFinanciero
+      operationId: MovimientoFinancieroController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for MovimientoFinanciero content
+        required: true
+        schema:
+          $ref: '#/definitions/models.MovimientoFinanciero'
+      responses:
+        "201":
+          description: '{int} models.MovimientoFinanciero'
+        "403":
+          description: body is empty
+  /movimiento_financiero/{id}:
+    get:
+      tags:
+      - movimiento_financiero
+      description: get MovimientoFinanciero by id
+      operationId: MovimientoFinancieroController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.MovimientoFinanciero'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - movimiento_financiero
+      description: update the MovimientoFinanciero
+      operationId: MovimientoFinancieroController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for MovimientoFinanciero content
+        required: true
+        schema:
+          $ref: '#/definitions/models.MovimientoFinanciero'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.MovimientoFinanciero'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - movimiento_financiero
+      description: delete the MovimientoFinanciero
+      operationId: MovimientoFinancieroController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /persona/:
+    get:
+      tags:
+      - persona
+      description: get Persona
+      operationId: PersonaController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Persona'
+        "403":
+          description: ""
+    post:
+      tags:
+      - persona
+      description: create Persona
+      operationId: PersonaController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Persona content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Persona'
+      responses:
+        "201":
+          description: '{int} models.Persona'
+        "403":
+          description: body is empty
+  /persona/{id}:
+    get:
+      tags:
+      - persona
+      description: get Persona by id
+      operationId: PersonaController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Persona'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - persona
+      description: update the Persona
+      operationId: PersonaController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Persona content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Persona'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Persona'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - persona
+      description: delete the Persona
+      operationId: PersonaController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /persona_evento/:
+    get:
+      tags:
+      - persona_evento
+      description: get PersonaEvento
+      operationId: PersonaEventoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.PersonaEvento'
+        "403":
+          description: ""
+    post:
+      tags:
+      - persona_evento
+      description: create PersonaEvento
+      operationId: PersonaEventoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for PersonaEvento content
+        required: true
+        schema:
+          $ref: '#/definitions/models.PersonaEvento'
+      responses:
+        "201":
+          description: '{int} models.PersonaEvento'
+        "403":
+          description: body is empty
+  /persona_evento/{id}:
+    get:
+      tags:
+      - persona_evento
+      description: get PersonaEvento by id
+      operationId: PersonaEventoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.PersonaEvento'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - persona_evento
+      description: update the PersonaEvento
+      operationId: PersonaEventoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for PersonaEvento content
+        required: true
+        schema:
+          $ref: '#/definitions/models.PersonaEvento'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.PersonaEvento'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - persona_evento
+      description: delete the PersonaEvento
+      operationId: PersonaEventoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /persona_foto/:
+    get:
+      tags:
+      - persona_foto
+      description: get PersonaFoto
+      operationId: PersonaFotoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.PersonaFoto'
+        "403":
+          description: ""
+    post:
+      tags:
+      - persona_foto
+      description: create PersonaFoto
+      operationId: PersonaFotoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for PersonaFoto content
+        required: true
+        schema:
+          $ref: '#/definitions/models.PersonaFoto'
+      responses:
+        "201":
+          description: '{int} models.PersonaFoto'
+        "403":
+          description: body is empty
+  /persona_foto/{id}:
+    get:
+      tags:
+      - persona_foto
+      description: get PersonaFoto by id
+      operationId: PersonaFotoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.PersonaFoto'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - persona_foto
+      description: update the PersonaFoto
+      operationId: PersonaFotoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for PersonaFoto content
+        required: true
+        schema:
+          $ref: '#/definitions/models.PersonaFoto'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.PersonaFoto'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - persona_foto
+      description: delete the PersonaFoto
+      operationId: PersonaFotoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /persona_roll/:
+    get:
+      tags:
+      - persona_roll
+      description: get PersonaRoll
+      operationId: PersonaRollController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.PersonaRoll'
+        "403":
+          description: ""
+    post:
+      tags:
+      - persona_roll
+      description: create PersonaRoll
+      operationId: PersonaRollController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for PersonaRoll content
+        required: true
+        schema:
+          $ref: '#/definitions/models.PersonaRoll'
+      responses:
+        "201":
+          description: '{int} models.PersonaRoll'
+        "403":
+          description: body is empty
+  /persona_roll/{id}:
+    get:
+      tags:
+      - persona_roll
+      description: get PersonaRoll by id
+      operationId: PersonaRollController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.PersonaRoll'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - persona_roll
+      description: update the PersonaRoll
+      operationId: PersonaRollController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for PersonaRoll content
+        required: true
+        schema:
+          $ref: '#/definitions/models.PersonaRoll'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.PersonaRoll'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - persona_roll
+      description: delete the PersonaRoll
+      operationId: PersonaRollController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /persona_sesion_clase/:
+    get:
+      tags:
+      - persona_sesion_clase
+      description: get PersonaSesionClase
+      operationId: PersonaSesionClaseController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.PersonaSesionClase'
+        "403":
+          description: ""
+    post:
+      tags:
+      - persona_sesion_clase
+      description: create PersonaSesionClase
+      operationId: PersonaSesionClaseController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for PersonaSesionClase content
+        required: true
+        schema:
+          $ref: '#/definitions/models.PersonaSesionClase'
+      responses:
+        "201":
+          description: '{int} models.PersonaSesionClase'
+        "403":
+          description: body is empty
+  /persona_sesion_clase/{id}:
+    get:
+      tags:
+      - persona_sesion_clase
+      description: get PersonaSesionClase by id
+      operationId: PersonaSesionClaseController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.PersonaSesionClase'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - persona_sesion_clase
+      description: update the PersonaSesionClase
+      operationId: PersonaSesionClaseController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for PersonaSesionClase content
+        required: true
+        schema:
+          $ref: '#/definitions/models.PersonaSesionClase'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.PersonaSesionClase'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - persona_sesion_clase
+      description: delete the PersonaSesionClase
+      operationId: PersonaSesionClaseController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /roll/:
+    get:
+      tags:
+      - roll
+      description: get Roll
+      operationId: RollController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Roll'
+        "403":
+          description: ""
+    post:
+      tags:
+      - roll
+      description: create Roll
+      operationId: RollController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Roll content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Roll'
+      responses:
+        "201":
+          description: '{int} models.Roll'
+        "403":
+          description: body is empty
+  /roll/{id}:
+    get:
+      tags:
+      - roll
+      description: get Roll by id
+      operationId: RollController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Roll'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - roll
+      description: update the Roll
+      operationId: RollController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Roll content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Roll'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Roll'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - roll
+      description: delete the Roll
+      operationId: RollController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /rutina/:
+    get:
+      tags:
+      - rutina
+      description: get Rutina
+      operationId: RutinaController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Rutina'
+        "403":
+          description: ""
+    post:
+      tags:
+      - rutina
+      description: create Rutina
+      operationId: RutinaController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Rutina content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Rutina'
+      responses:
+        "201":
+          description: '{int} models.Rutina'
+        "403":
+          description: body is empty
+  /rutina/{id}:
+    get:
+      tags:
+      - rutina
+      description: get Rutina by id
+      operationId: RutinaController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Rutina'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - rutina
+      description: update the Rutina
+      operationId: RutinaController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Rutina content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Rutina'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Rutina'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - rutina
+      description: delete the Rutina
+      operationId: RutinaController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /sesion_clase/:
+    get:
+      tags:
+      - sesion_clase
+      description: get SesionClase
+      operationId: SesionClaseController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SesionClase'
+        "403":
+          description: ""
+    post:
+      tags:
+      - sesion_clase
+      description: create SesionClase
+      operationId: SesionClaseController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for SesionClase content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SesionClase'
+      responses:
+        "201":
+          description: '{int} models.SesionClase'
+        "403":
+          description: body is empty
+  /sesion_clase/{id}:
+    get:
+      tags:
+      - sesion_clase
+      description: get SesionClase by id
+      operationId: SesionClaseController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SesionClase'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - sesion_clase
+      description: update the SesionClase
+      operationId: SesionClaseController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for SesionClase content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SesionClase'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SesionClase'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - sesion_clase
+      description: delete the SesionClase
+      operationId: SesionClaseController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /sesion_clase_rutina/:
+    get:
+      tags:
+      - sesion_clase_rutina
+      description: get SesionClaseRutina
+      operationId: SesionClaseRutinaController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SesionClaseRutina'
+        "403":
+          description: ""
+    post:
+      tags:
+      - sesion_clase_rutina
+      description: create SesionClaseRutina
+      operationId: SesionClaseRutinaController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for SesionClaseRutina content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SesionClaseRutina'
+      responses:
+        "201":
+          description: '{int} models.SesionClaseRutina'
+        "403":
+          description: body is empty
+  /sesion_clase_rutina/{id}:
+    get:
+      tags:
+      - sesion_clase_rutina
+      description: get SesionClaseRutina by id
+      operationId: SesionClaseRutinaController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SesionClaseRutina'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - sesion_clase_rutina
+      description: update the SesionClaseRutina
+      operationId: SesionClaseRutinaController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for SesionClaseRutina content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SesionClaseRutina'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SesionClaseRutina'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - sesion_clase_rutina
+      description: delete the SesionClaseRutina
+      operationId: SesionClaseRutinaController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /tipo_concepto/:
+    get:
+      tags:
+      - tipo_concepto
+      description: get TipoConcepto
+      operationId: TipoConceptoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoConcepto'
+        "403":
+          description: ""
+    post:
+      tags:
+      - tipo_concepto
+      description: create TipoConcepto
+      operationId: TipoConceptoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for TipoConcepto content
+        required: true
+        schema:
+          $ref: '#/definitions/models.TipoConcepto'
+      responses:
+        "201":
+          description: '{int} models.TipoConcepto'
+        "403":
+          description: body is empty
+  /tipo_concepto/{id}:
+    get:
+      tags:
+      - tipo_concepto
+      description: get TipoConcepto by id
+      operationId: TipoConceptoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoConcepto'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - tipo_concepto
+      description: update the TipoConcepto
+      operationId: TipoConceptoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for TipoConcepto content
+        required: true
+        schema:
+          $ref: '#/definitions/models.TipoConcepto'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoConcepto'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - tipo_concepto
+      description: delete the TipoConcepto
+      operationId: TipoConceptoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /tipo_movimiento/:
+    get:
+      tags:
+      - tipo_movimiento
+      description: get TipoMovimiento
+      operationId: TipoMovimientoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoMovimiento'
+        "403":
+          description: ""
+    post:
+      tags:
+      - tipo_movimiento
+      description: create TipoMovimiento
+      operationId: TipoMovimientoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for TipoMovimiento content
+        required: true
+        schema:
+          $ref: '#/definitions/models.TipoMovimiento'
+      responses:
+        "201":
+          description: '{int} models.TipoMovimiento'
+        "403":
+          description: body is empty
+  /tipo_movimiento/{id}:
+    get:
+      tags:
+      - tipo_movimiento
+      description: get TipoMovimiento by id
+      operationId: TipoMovimientoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoMovimiento'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - tipo_movimiento
+      description: update the TipoMovimiento
+      operationId: TipoMovimientoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for TipoMovimiento content
+        required: true
+        schema:
+          $ref: '#/definitions/models.TipoMovimiento'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoMovimiento'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - tipo_movimiento
+      description: delete the TipoMovimiento
+      operationId: TipoMovimientoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /tipo_sesion/:
+    get:
+      tags:
+      - tipo_sesion
+      description: get TipoSesion
+      operationId: TipoSesionController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoSesion'
+        "403":
+          description: ""
+    post:
+      tags:
+      - tipo_sesion
+      description: create TipoSesion
+      operationId: TipoSesionController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for TipoSesion content
+        required: true
+        schema:
+          $ref: '#/definitions/models.TipoSesion'
+      responses:
+        "201":
+          description: '{int} models.TipoSesion'
+        "403":
+          description: body is empty
+  /tipo_sesion/{id}:
+    get:
+      tags:
+      - tipo_sesion
+      description: get TipoSesion by id
+      operationId: TipoSesionController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoSesion'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - tipo_sesion
+      description: update the TipoSesion
+      operationId: TipoSesionController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for TipoSesion content
+        required: true
+        schema:
+          $ref: '#/definitions/models.TipoSesion'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoSesion'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - tipo_sesion
+      description: delete the TipoSesion
+      operationId: TipoSesionController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+definitions:
+  models.Combates:
+    title: Combates
+    type: object
+    properties:
+      Contrincante1:
+        $ref: '#/definitions/models.Persona'
+      Contrincante2:
+        $ref: '#/definitions/models.Persona'
+      Evento:
+        $ref: '#/definitions/models.Evento'
+      Id:
+        type: integer
+        format: int64
+      Observaciones:
+        type: string
+      Resultado:
+        type: string
+  models.Concepto:
+    title: Concepto
+    type: object
+    properties:
+      Descripcion:
+        type: string
+      FechaFin:
+        type: string
+        format: string
+      FechaInicio:
+        type: string
+        format: string
+      Id:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+      TipoConcepto:
+        $ref: '#/definitions/models.TipoConcepto'
+  models.Evento:
+    title: Evento
+    type: object
+    properties:
+      Descripcion:
+        type: string
+      FechaEvento:
+        type: string
+        format: string
+      GradoImportancia:
+        type: integer
+        format: int64
+      Id:
+        type: integer
+        format: int64
+      LugarId:
+        $ref: '#/definitions/models.Lugar'
+      Nombre:
+        type: string
+  models.Foto:
+    title: Foto
+    type: object
+    properties:
+      Descripcion:
+        type: string
+      FechaRegistro:
+        type: string
+        format: string
+      Id:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+      UrlPath:
+        type: string
+  models.Lugar:
+    title: Lugar
+    type: object
+    properties:
+      Descripcion:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+      Ubicacion:
+        type: string
+  models.MovimientoFinanciero:
+    title: MovimientoFinanciero
+    type: object
+    properties:
+      ConceptoId:
+        $ref: '#/definitions/models.Concepto'
+      Fecha:
+        type: string
+        format: string
+      Id:
+        type: integer
+        format: int64
+      PersonaId:
+        $ref: '#/definitions/models.Persona'
+      TipoMovimientoId:
+        $ref: '#/definitions/models.TipoMovimiento'
+      Valor:
+        type: number
+        format: double
+  models.Persona:
+    title: Persona
+    type: object
+    properties:
+      Activo:
+        type: integer
+        format: int32
+      Apellidos:
+        type: string
+      Barrio:
+        type: string
+      Correo:
+        type: string
+      Direccion:
+        type: string
+      Documento:
+        type: string
+      FechaNacimiento:
+        type: string
+        format: string
+      Id:
+        type: integer
+        format: int64
+      Nombres:
+        type: string
+      Telefono:
+        type: string
+  models.PersonaEvento:
+    title: PersonaEvento
+    type: object
+    properties:
+      Evento:
+        $ref: '#/definitions/models.Evento'
+      Id:
+        type: integer
+        format: int64
+      Persona:
+        $ref: '#/definitions/models.Persona'
+  models.PersonaFoto:
+    title: PersonaFoto
+    type: object
+    properties:
+      Foto:
+        $ref: '#/definitions/models.Foto'
+      Id:
+        type: integer
+        format: int64
+      Persona:
+        $ref: '#/definitions/models.Persona'
+  models.PersonaRoll:
+    title: PersonaRoll
+    type: object
+    properties:
+      Id:
+        type: integer
+        format: int64
+      Persona:
+        $ref: '#/definitions/models.Persona'
+      Roll:
+        $ref: '#/definitions/models.Roll'
+  models.PersonaSesionClase:
+    title: PersonaSesionClase
+    type: object
+    properties:
+      Id:
+        type: integer
+        format: int64
+      Iobservaciones:
+        type: string
+      Persona:
+        $ref: '#/definitions/models.Persona'
+      SesionClase:
+        $ref: '#/definitions/models.SesionClase'
+  models.Roll:
+    title: Roll
+    type: object
+    properties:
+      Descripcion:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+  models.Rutina:
+    title: Rutina
+    type: object
+    properties:
+      Descripcion:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+  models.SesionClase:
+    title: SesionClase
+    type: object
+    properties:
+      Fecha:
+        type: string
+      Hora:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Lugar:
+        $ref: '#/definitions/models.Lugar'
+      TipoSesionId:
+        $ref: '#/definitions/models.TipoSesion'
+  models.SesionClaseRutina:
+    title: SesionClaseRutina
+    type: object
+    properties:
+      Id:
+        type: integer
+        format: int64
+      Rutina:
+        $ref: '#/definitions/models.Rutina'
+      SesionClase:
+        $ref: '#/definitions/models.SesionClase'
+      Tiempo:
+        type: string
+        format: string
+  models.TipoConcepto:
+    title: TipoConcepto
+    type: object
+    properties:
+      Descripcion:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+  models.TipoMovimiento:
+    title: TipoMovimiento
+    type: object
+    properties:
+      Descripcion:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+  models.TipoSesion:
+    title: TipoSesion
+    type: object
+    properties:
+      Descripcion:
+        type: integer
+        format: int32
+      Id:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+tags:
+- name: persona_roll
+  description: |
+    PersonaRollController operations for PersonaRoll
+- name: combates
+  description: |
+    CombatesController operations for Combates
+- name: concepto
+  description: |
+    ConceptoController operations for Concepto
+- name: evento
+  description: |
+    EventoController operations for Evento
+- name: foto
+  description: |
+    FotoController operations for Foto
+- name: lugar
+  description: |
+    LugarController operations for Lugar
+- name: movimiento_financiero
+  description: |
+    MovimientoFinancieroController operations for MovimientoFinanciero
+- name: persona
+  description: |
+    PersonaController operations for Persona
+- name: persona_evento
+  description: |
+    PersonaEventoController operations for PersonaEvento
+- name: persona_foto
+  description: |
+    PersonaFotoController operations for PersonaFoto
+- name: persona_sesion_clase
+  description: |
+    PersonaSesionClaseController operations for PersonaSesionClase
+- name: roll
+  description: |
+    RollController operations for Roll
+- name: rutina
+  description: |
+    RutinaController operations for Rutina
+- name: sesion_clase
+  description: |
+    SesionClaseController operations for SesionClase
+- name: sesion_clase_rutina
+  description: |
+    SesionClaseRutinaController operations for SesionClaseRutina
+- name: tipo_concepto
+  description: |
+    TipoConceptoController operations for TipoConcepto
+- name: tipo_movimiento
+  description: |
+    TipoMovimientoController operations for TipoMovimiento
+- name: tipo_sesion
+  description: |
+    TipoSesionController operations for TipoSesion
